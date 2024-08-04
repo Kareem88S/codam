@@ -1,0 +1,3 @@
+[submodule "piscine"]
+	path = piscine
+	url = git@github.com:Kareem88S/Piscine.git
