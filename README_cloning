@@ -1,0 +1,18 @@
+## To correctly clone this repo:
+git clone --recursive https://github.com/Kareem88S/codam.git
+
+## If You Forget to Use --recursive
+If you initially cloned a repository without --recursive and later realize you need the submodules, you can initialize and update them manually:
+
+git submodule update --init --recursive
+
+## Why:
+This tells Git to also clone the content of any submodules, recursively, according to the commit IDs recorded in the main repository.
+When you have a Git repository with submodules, the .gitmodules file in the repository contains the URLs of the submodules. However, the default behavior of git clone does not include the content of the submodules. It only clones the main repository. The submodule directories will be initialized but empty.
+
+## Updating Submodules Later
+If the submodules are already cloned and you want to update them to match what the main repository expects (perhaps after new commits have been made in the submodules), you can use:
+
+git submodule update --remote
+
+This updates the submodules to the latest commit available on their respective branches as specified in the .gitmodules file or to a specific branch if set differently in the submodule’s configuration.
